@@ -1,115 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LearnAIwithus-AI for everyone</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-<style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnAIwithUS - Your AI Learning Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
         body {
-
             font-family: 'Inter', sans-serif;
-
         }
-
         .gradient-bg {
-
-            background: linear-gradient(135deg, #1e3a8a, #4f46e5, #8b5cf6);
-
+            background: linear-gradient(135deg, #1e3a8a 0%, #4f46e5 100%);
         }
-
         .glass-card {
-
-            background: rgba(255, 255, 255, 0.1);
-
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-
             -webkit-backdrop-filter: blur(10px);
-
-            border: 1px solid rgba(255, 255, 255, 0.2);
-
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-</style>
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(250, 204, 21, 0.1);
+        }
+    </style>
 </head>
-<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
-<div class="gradient-bg rounded-3xl max-w-2xl w-full shadow-2xl overflow-hidden">
-<div class="p-8 md:p-12 text-white">
-<!-- Header -->
-<div class="text-center mb-8">
-<h1 class="text-4xl md:text-6xl font-black uppercase tracking-wider">Beginner's Weekend Course on</h1>
-<h2 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-white mt-2">GenAI</h2>
-</div>
-<!-- Main Content Grid -->
-<div class="grid md:grid-cols-2 gap-8">
-<!-- Left Column - Day 1 & 2 -->
-<div class="space-y-6">
-<div>
-<h3 class="text-2xl font-bold border-b-2 border-yellow-300 pb-2 mb-3">Day 1: Foundations</h3>
-<ul class="list-disc list-inside space-y-2 text-gray-200">
-<li>Intro to GenAI & Process Automation</li>
-<li>Explore AI Tools (ChatGPT & more)</li>
-<li>
+<body class="bg-gray-900 text-gray-200">
 
-                                Intro to Automation Platforms
-<!-- LOGOS ADDED HERE -->
-<div class="flex items-center space-x-4 mt-2 pl-6">
-<!-- Zapier Logo -->
-<div title="Zapier" class="bg-orange-500 p-1 rounded-md h-8 w-8 flex items-center justify-center ring-2 ring-white/20">
-<svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 256 256"><path d="M228,64a4,4,0,0,0-4,4V99.43l-52.69-46.1A4,4,0,0,0,164,56H40a4,4,0,0,0,0,8H160.83l-58.37,51.07a4,4,0,0,0-6.23-5.06L32,164.57V128a4,4,0,0,0-8,0v40a4,4,0,0,0,4,4H64a4,4,0,0,0,3.16-6.23L44.57,136H92a4,4,0,0,0,3.12-6.31L44,64H28a4,4,0,0,0-4,4v92H55.43l52.69,46.1A4,4,0,0,0,116,208H216a4,4,0,0,0,0-8H119.17l58.37-51.07a4,4,0,0,0,6.23,5.06L248,200V128a4,4,0,0,0-8,0v-4.57L188,144H164a4,4,0,0,0-3.12,6.31L212,208h4a4,4,0,0,0,4-4V68A4,4,0,0,0,228,64Z"></path></svg>
-</div>
-<!-- N8N Logo -->
-<div title="n8n" class="bg-purple-600 p-1 rounded-md h-8 flex items-center justify-center ring-2 ring-white/20">
-<span class="font-bold text-white text-lg px-1">n8n</span>
-</div>
-<!-- Relay.app Logo -->
-<div title="Relay.app" class="bg-blue-500 p-1 px-2 rounded-md h-8 flex items-center justify-center ring-2 ring-white/20">
-<span class="font-bold text-white text-sm">relay</span>
-</div>
-</div>
-</li>
-<li>What are AI Agents?</li>
-</ul>
-</div>
-<div>
-<h3 class="text-2xl font-bold border-b-2 border-yellow-300 pb-2 mb-3">Day 2: Deep Dive</h3>
-<ul class="list-disc list-inside space-y-2 text-gray-200">
-<li>Detailed Tool Walkthroughs</li>
-<li>Mastering Automation</li>
-<li>Live Building: Your First AI Agent</li>
-</ul>
-</div>
-</div>
-<!-- Right Column - Details & CTA -->
-<div class="flex flex-col justify-between space-y-6">
-<div class="glass-card rounded-xl p-6 text-center space-y-4">
-<div class="flex items-center justify-center space-x-3">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-<span class="text-xl font-semibold">Live on Zoom</span>
-</div>
-<div class="flex items-center justify-center space-x-3">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-<span class="text-xl font-semibold">2 Hours / Day</span>
-</div>
-</div>
-<div class="bg-white text-gray-900 rounded-xl p-6 text-center">
-<p class="text-lg font-semibold">Price</p>
-<p class="text-5xl font-black text-indigo-600">299 <span class="text-3xl">SAR</span></p>
-</div>
-<!-- IMPORTANT: Replace the placeholder href with your actual Google Form link -->
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSe-8aFE8lN3dKSwBRJeTFz7CYbQepxIPYcHEXn-BjLC42v8gg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="w-full bg-yellow-400 text-gray-900 text-center py-4 rounded-xl text-2xl font-bold hover:bg-yellow-300 transition duration-300 shadow-lg">
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">LearnAIwithUS</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-300 hover:text-yellow-300 transition">Home</a>
+                <a href="#courses" class="text-gray-300 hover:text-yellow-300 transition">Courses</a>
+                <a href="#about" class="text-gray-300 hover:text-yellow-300 transition">About</a>
+            </nav>
+            <a href="#" class="hidden md:block bg-yellow-400 text-gray-900 px-5 py-2 rounded-lg font-bold hover:bg-yellow-300 transition">Register</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90">
+            <a href="#home" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Home</a>
+            <a href="#courses" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Courses</a>
+            <a href="#about" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">About</a>
+            <a href="#" class="block text-center py-4 px-6 bg-yellow-400 text-gray-900 font-bold">Register</a>
+        </div>
+    </header>
 
-                        Register Now
-</a>
-</div>
-</div>
-<!-- Footer -->
-<div class="text-center mt-8 text-gray-300">
-<p>No experience required. Start your AI journey today!</p>
-</div>
-</div>
-</div>
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white pt-32 pb-24">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-wider">Unlock the Future with</h1>
+            <h2 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-white mt-2">Generative AI</h2>
+            <p class="mt-6 text-lg md:text-xl text-indigo-200 max-w-3xl mx-auto">From beginner fundamentals to advanced agent development, start your AI journey with us and transform your skills for tomorrow's world.</p>
+            <a href="#courses" class="mt-10 inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition shadow-lg">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white">Our Learning Path</h2>
+                <p class="mt-2 text-lg text-gray-400">Choose the level that's right for you.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Card Template -->
+                <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
+                    <div class="mb-4">
+                        <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Basic</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">GenAI Foundations</h3>
+                    <p class="text-gray-400 mb-6 flex-grow">Perfect for beginners. Understand the core concepts of Generative AI and learn about the powerful tools that are shaping our world.</p>
+                    <ul class="text-gray-300 space-y-3 mb-8">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Introduction to GenAI</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Overview of AI Tools (ChatGPT)</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Intro to Automation (Zapier, n8n)</li>
+                    </ul>
+                    <a href="#" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</a>
+                </div>
+
+                <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
+                    <div class="mb-4">
+                        <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Intermediate</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">AI Automation Deep Dive</h3>
+                    <p class="text-gray-400 mb-6 flex-grow">Go beyond the basics. Connect different AI tools and build powerful, automated workflows to streamline tasks and boost productivity.</p>
+                    <ul class="text-gray-300 space-y-3 mb-8">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Advanced Prompt Engineering</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Multi-Step Automation Flows</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Integrating APIs with AI</li>
+                    </ul>
+                    <a href="#" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</a>
+                </div>
+
+                <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
+                    <div class="mb-4">
+                        <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Advanced</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Building AI Agents</h3>
+                    <p class="text-gray-400 mb-6 flex-grow">The final frontier. Learn to design, build, and deploy autonomous AI agents that can perform complex tasks and make decisions.</p>
+                    <ul class="text-gray-300 space-y-3 mb-8">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>AI Agent Architecture</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Live Agent Building Project</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Testing and Deployment</li>
+                    </ul>
+                    <a href="#" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://placehold.co/600x400/111827/facc15?text=LearnAIwithUS" alt="Team working on AI" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-4">About LearnAIwithUS</h2>
+                    <p class="text-gray-400 text-lg mb-4">We are a team of AI enthusiasts and professionals based in Riyadh, dedicated to making AI education accessible to everyone. Our mission is to demystify complex technologies and empower individuals and businesses with the skills they need to thrive in the age of artificial intelligence.</p>
+                    <p class="text-gray-400 text-lg">Our hands-on, project-based approach ensures that you're not just learning theory—you're building real, practical solutions from day one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg py-10">
+        <div class="container mx-auto px-6 text-center text-indigo-200">
+            <p class="text-white font-semibold">&copy; 2024 LearnAIwithUS. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Your journey into AI starts here.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+    </script>
+
 </body>
 </html>
- 
