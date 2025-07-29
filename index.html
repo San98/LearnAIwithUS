@@ -33,9 +33,9 @@
 <body class="bg-gray-900 text-gray-200">
 
     <!-- Header & Navigation -->
-    <header class="bg-gray-900/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
+    <header id="main-header" class="bg-gray-900/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">LearnAIwithUS</a>
+            <a href="#" onclick="showMainPage()" class="text-2xl font-bold text-white">LearnAIwithUS</a>
             <nav class="hidden md:flex space-x-8">
                 <a href="#home" class="text-gray-300 hover:text-yellow-300 transition">Home</a>
                 <a href="#courses" class="text-gray-300 hover:text-yellow-300 transition">Courses</a>
@@ -57,91 +57,173 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="gradient-bg text-white pt-32 pb-24">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-wider">Unlock the Future with</h1>
-            <h2 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-white mt-2">Generative AI</h2>
-            <p class="mt-6 text-lg md:text-xl text-indigo-200 max-w-3xl mx-auto">From beginner fundamentals to advanced agent development, start your AI journey with us and transform your skills for tomorrow's world.</p>
-            <a href="#courses" class="mt-10 inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition shadow-lg">Explore Courses</a>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-white">Our Learning Path</h2>
-                <p class="mt-2 text-lg text-gray-400">Choose the level that's right for you.</p>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="main-section gradient-bg text-white pt-32 pb-24">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black uppercase tracking-wider">Unlock the Future with</h1>
+                <h2 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-white mt-2">Generative AI</h2>
+                <p class="mt-6 text-lg md:text-xl text-indigo-200 max-w-3xl mx-auto">From beginner fundamentals to advanced agent development, start your AI journey with us and transform your skills for tomorrow's world.</p>
+                <a href="#courses" class="mt-10 inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition shadow-lg">Explore Courses</a>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="main-section py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white">Our Learning Path</h2>
+                    <p class="mt-2 text-lg text-gray-400">Choose the level that's right for you.</p>
+                </div>
                 
-                <!-- Card Template -->
-                <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
-                    <div class="mb-4">
-                        <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Basic</span>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Basic Course Card -->
+                    <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
+                        <div class="mb-4">
+                            <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Basic</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">GenAI Foundations</h3>
+                        <p class="text-gray-400 mb-6 flex-grow">Perfect for beginners. Understand the core concepts of Generative AI and learn about the powerful tools that are shaping our world.</p>
+                        <ul class="text-gray-300 space-y-3 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Introduction to GenAI</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Overview of AI Tools (ChatGPT)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Intro to Automation (Zapier, n8n)</li>
+                        </ul>
+                        <button onclick="showPage('basic')" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</button>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">GenAI Foundations</h3>
-                    <p class="text-gray-400 mb-6 flex-grow">Perfect for beginners. Understand the core concepts of Generative AI and learn about the powerful tools that are shaping our world.</p>
-                    <ul class="text-gray-300 space-y-3 mb-8">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Introduction to GenAI</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Overview of AI Tools (ChatGPT)</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Intro to Automation (Zapier, n8n)</li>
-                    </ul>
-                    <a href="#" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</a>
-                </div>
 
-                <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
-                    <div class="mb-4">
-                        <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Intermediate</span>
+                    <!-- Intermediate Course Card -->
+                    <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
+                        <div class="mb-4">
+                            <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Intermediate</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">AI Automation Deep Dive</h3>
+                        <p class="text-gray-400 mb-6 flex-grow">Go beyond the basics. Connect different AI tools and build powerful, automated workflows to streamline tasks and boost productivity.</p>
+                        <ul class="text-gray-300 space-y-3 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Advanced Prompt Engineering</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Multi-Step Automation Flows</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Integrating APIs with AI</li>
+                        </ul>
+                        <button onclick="showPage('intermediate')" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</button>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">AI Automation Deep Dive</h3>
-                    <p class="text-gray-400 mb-6 flex-grow">Go beyond the basics. Connect different AI tools and build powerful, automated workflows to streamline tasks and boost productivity.</p>
-                    <ul class="text-gray-300 space-y-3 mb-8">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Advanced Prompt Engineering</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Multi-Step Automation Flows</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Integrating APIs with AI</li>
-                    </ul>
-                    <a href="#" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</a>
-                </div>
 
-                <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
-                    <div class="mb-4">
-                        <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Advanced</span>
+                    <!-- Advanced Course Card -->
+                    <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
+                        <div class="mb-4">
+                            <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Advanced</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Building AI Agents</h3>
+                        <p class="text-gray-400 mb-6 flex-grow">The final frontier. Learn to design, build, and deploy autonomous AI agents that can perform complex tasks and make decisions.</p>
+                        <ul class="text-gray-300 space-y-3 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>AI Agent Architecture</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Live Agent Building Project</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Testing and Deployment</li>
+                        </ul>
+                        <button onclick="showPage('advanced')" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</button>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Building AI Agents</h3>
-                    <p class="text-gray-400 mb-6 flex-grow">The final frontier. Learn to design, build, and deploy autonomous AI agents that can perform complex tasks and make decisions.</p>
-                    <ul class="text-gray-300 space-y-3 mb-8">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>AI Agent Architecture</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Live Agent Building Project</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Testing and Deployment</li>
-                    </ul>
-                    <a href="#" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</a>
-                </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://placehold.co/600x400/111827/facc15?text=LearnAIwithUS" alt="Team working on AI" class="rounded-lg shadow-xl w-full">
-                </div>
-                <div>
-                    <h2 class="text-4xl font-bold text-white mb-4">About LearnAIwithUS</h2>
-                    <p class="text-gray-400 text-lg mb-4">We are a team of AI enthusiasts and professionals based in Riyadh, dedicated to making AI education accessible to everyone. Our mission is to demystify complex technologies and empower individuals and businesses with the skills they need to thrive in the age of artificial intelligence.</p>
-                    <p class="text-gray-400 text-lg">Our hands-on, project-based approach ensures that you're not just learning theory—you're building real, practical solutions from day one.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="main-section py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://placehold.co/600x400/111827/facc15?text=LearnAIwithUS" alt="Team working on AI" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-bold text-white mb-4">About LearnAIwithUS</h2>
+                        <p class="text-gray-400 text-lg mb-4">We are a team of AI enthusiasts and professionals based in Riyadh, dedicated to making AI education accessible to everyone. Our mission is to demystify complex technologies and empower individuals and businesses with the skills they need to thrive in the age of artificial intelligence.</p>
+                        <p class="text-gray-400 text-lg">Our hands-on, project-based approach ensures that you're not just learning theory—you're building real, practical solutions from day one.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Course Detail Pages -->
+    <div id="course-details-container">
+        <!-- Basic Course Details -->
+        <section id="basic-details" class="hidden course-page py-20 bg-gray-900 min-h-screen">
+            <div class="container mx-auto px-6">
+                <button onclick="showMainPage()" class="inline-flex items-center mb-12 text-yellow-400 font-semibold hover:text-yellow-300">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to All Courses
+                </button>
+                <h2 class="text-4xl md:text-5xl font-bold text-white">GenAI Foundations</h2>
+                <p class="mt-4 text-3xl font-bold text-yellow-400">199 SAR</p>
+                <div class="mt-8 text-lg text-gray-300 max-w-3xl space-y-4">
+                    <p>This is the perfect starting point. We'll cover the essential concepts behind Generative AI, introduce you to the most popular tools, and get you started with basic automation so you can see the power of AI in action immediately.</p>
+                    <h3 class="text-2xl font-bold text-white pt-6 pb-2">What You'll Learn:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>The history and core principles of Generative AI.</li>
+                        <li>Effective prompting techniques for tools like ChatGPT.</li>
+                        <li>How to automate simple tasks by connecting apps with Zapier or n8n.</li>
+                        <li>Understanding the landscape of modern AI tools and their uses.</li>
+                    </ul>
+                    <h3 class="text-2xl font-bold text-white pt-6 pb-2">Who is this for?</h3>
+                    <p>Absolute beginners, students, professionals, or anyone curious about AI with no prior technical experience.</p>
+                </div>
+                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-8aFE8lN3dKSwBRJeTFz7CYbQepxIPYcHEXn-BjLC42v8gg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="mt-10 inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition shadow-lg">Register for Basic Course</a>
+            </div>
+        </section>
+
+        <!-- Intermediate Course Details -->
+        <section id="intermediate-details" class="hidden course-page py-20 bg-gray-900 min-h-screen">
+            <div class="container mx-auto px-6">
+                 <button onclick="showMainPage()" class="inline-flex items-center mb-12 text-yellow-400 font-semibold hover:text-yellow-300">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to All Courses
+                </button>
+                <h2 class="text-4xl md:text-5xl font-bold text-white">AI Automation Deep Dive</h2>
+                <p class="mt-4 text-3xl font-bold text-yellow-400">299 SAR</p>
+                <div class="mt-8 text-lg text-gray-300 max-w-3xl space-y-4">
+                    <p>Ready to build? In this course, you'll move from theory to practice. We focus on creating complex, multi-step automated workflows that solve real-world problems, integrating various AI tools and services together.</p>
+                    <h3 class="text-2xl font-bold text-white pt-6 pb-2">What You'll Learn:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Advanced prompt engineering for nuanced and controlled outputs.</li>
+                        <li>Building workflows with conditional logic (paths, filters).</li>
+                        <li>Connecting to APIs to pull and push data within your automations.</li>
+                        <li>Practical projects like building a content creation pipeline or an automated research assistant.</li>
+                    </ul>
+                     <h3 class="text-2xl font-bold text-white pt-6 pb-2">Who is this for?</h3>
+                    <p>Learners who have completed the basic course or have some experience with AI tools and want to build practical applications.</p>
+                </div>
+                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-8aFE8lN3dKSwBRJeTFz7CYbQepxIPYcHEXn-BjLC42v8gg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="mt-10 inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition shadow-lg">Register for Intermediate Course</a>
+            </div>
+        </section>
+
+        <!-- Advanced Course Details -->
+        <section id="advanced-details" class="hidden course-page py-20 bg-gray-900 min-h-screen">
+            <div class="container mx-auto px-6">
+                 <button onclick="showMainPage()" class="inline-flex items-center mb-12 text-yellow-400 font-semibold hover:text-yellow-300">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to All Courses
+                </button>
+                <h2 class="text-4xl md:text-5xl font-bold text-white">Building AI Agents</h2>
+                <p class="mt-4 text-3xl font-bold text-yellow-400">399 SAR</p>
+                <div class="mt-8 text-lg text-gray-300 max-w-3xl space-y-4">
+                    <p>This is where AI becomes autonomous. You'll learn the architecture and principles behind AI agents that can reason, plan, and execute tasks independently. We will guide you through building and deploying your own functional AI agent.</p>
+                    <h3 class="text-2xl font-bold text-white pt-6 pb-2">What You'll Learn:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Core concepts of AI agent loops (e.g., ReAct framework).</li>
+                        <li>Giving agents access to tools (like web search, calculators).</li>
+                        <li>Memory and state management for long-running tasks.</li>
+                        <li>A capstone project where you design and build a custom AI agent to solve a specific problem.</li>
+                    </ul>
+                     <h3 class="text-2xl font-bold text-white pt-6 pb-2">Who is this for?</h3>
+                    <p>Developers, advanced users, and business leaders who want to understand and build the next generation of AI applications.</p>
+                </div>
+                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-8aFE8lN3dKSwBRJeTFz7CYbQepxIPYcHEXn-BjLC42v8gg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="mt-10 inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition shadow-lg">Register for Advanced Course</a>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="gradient-bg py-10">
+    <footer class="main-section gradient-bg py-10">
         <div class="container mx-auto px-6 text-center text-indigo-200">
             <p class="text-white font-semibold">&copy; 2024 LearnAIwithUS. All Rights Reserved.</p>
             <p class="text-sm mt-2">Your journey into AI starts here.</p>
@@ -149,7 +231,47 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
+        // --- Page Navigation Logic ---
+        const mainContent = document.getElementById('main-content');
+        const courseDetailsContainer = document.getElementById('course-details-container');
+        const mainHeader = document.getElementById('main-header');
+
+        function showPage(pageId) {
+            // Hide main content
+            mainContent.classList.add('hidden');
+            mainHeader.classList.add('hidden');
+
+            // Hide all course pages first
+            const allCoursePages = courseDetailsContainer.querySelectorAll('.course-page');
+            allCoursePages.forEach(p => p.classList.add('hidden'));
+
+            // Show the specific course page
+            const targetPage = document.getElementById(pageId + '-details');
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+            
+            window.scrollTo(0, 0); // Scroll to top of the new view
+        }
+
+        function showMainPage() {
+            // Hide all course pages
+            const allCoursePages = courseDetailsContainer.querySelectorAll('.course-page');
+            allCoursePages.forEach(p => p.classList.add('hidden'));
+            
+            // Show main content
+            mainContent.classList.remove('hidden');
+            mainHeader.classList.remove('hidden');
+
+            // Optional: scroll to the courses section smoothly
+            const coursesSection = document.getElementById('courses');
+            if(coursesSection) {
+                 coursesSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+
+        // --- Mobile Menu Logic ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
