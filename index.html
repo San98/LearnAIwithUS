@@ -57,6 +57,7 @@
             <nav class="hidden lg:flex space-x-8">
                 <a href="#home" class="text-gray-300 hover:text-yellow-300 transition">Home</a>
                 <a href="#courses" class="text-gray-300 hover:text-yellow-300 transition">Courses</a>
+                <a href="#workflows" class="text-gray-300 hover:text-yellow-300 transition">Workflows</a>
                 <a href="#testimonials" class="text-gray-300 hover:text-yellow-300 transition">Testimonials</a>
                 <a href="#about" class="text-gray-300 hover:text-yellow-300 transition">About</a>
                 <a href="#faq" class="text-gray-300 hover:text-yellow-300 transition">FAQ</a>
@@ -72,6 +73,7 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-gray-900/90">
             <a href="#home" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Home</a>
             <a href="#courses" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Courses</a>
+            <a href="#workflows" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Workflows</a>
             <a href="#testimonials" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Testimonials</a>
             <a href="#about" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">About</a>
             <a href="#faq" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">FAQ</a>
@@ -123,8 +125,50 @@
             </div>
         </section>
 
+        <!-- Sample Workflows Section -->
+        <section id="workflows" class="main-section py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white">See What You Can Build</h2>
+                    <p class="mt-2 text-lg text-gray-400">Explore sample workflows and practical projects.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <!-- Workflow Video Placeholder -->
+                    <div class="col-span-2">
+                        <div class="bg-gray-900/50 p-4 rounded-lg">
+                            <!-- 
+                                VIDEO PLACEHOLDER: 
+                                To embed your video, upload it to a service like YouTube or Vimeo.
+                                Then, replace this entire 'div' with the embed code they provide.
+                                It will look something like <iframe src="..."></iframe>
+                            -->
+                            <div class="relative aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                                <img src="https://placehold.co/1280x720/111827/facc15?text=Video+Walkthrough" class="w-full h-full object-cover" alt="FNOL Fraud Analysis Workflow video thumbnail">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50">
+                                    <button class="w-20 h-20 bg-yellow-400/80 rounded-full flex items-center justify-center hover:bg-yellow-400 transition" aria-label="Play Video">
+                                        <svg class="w-10 h-10 text-gray-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mt-4">Video: FNOL Fraud Analysis Workflow</h3>
+                        </div>
+                    </div>
+                    <!-- Workflow Screenshot 1 -->
+                    <div class="bg-gray-900/50 p-4 rounded-lg">
+                        <img src="https://placehold.co/600x338/2d3748/facc15?text=Fraud+Analysis+Workflow" class="w-full rounded-md shadow-md" alt="Advanced Fraud Analysis Workflow">
+                        <h3 class="text-lg font-bold text-white mt-3">Advanced Fraud Analysis Workflow</h3>
+                    </div>
+                    <!-- Workflow Screenshot 2 -->
+                    <div class="bg-gray-900/50 p-4 rounded-lg">
+                        <img src="https://placehold.co/600x338/f7fafc/2d3748?text=News+Summarization+Workflow" class="w-full rounded-md shadow-md" alt="Relay.app workflow screenshot 2">
+                        <h3 class="text-lg font-bold text-white mt-3">Automated News Summarization in Relay.app</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Testimonials Section -->
-        <section id="testimonials" class="main-section py-20 bg-gray-800">
+        <section id="testimonials" class="main-section py-20 bg-gray-900">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-white">What Our Students Say</h2>
@@ -175,7 +219,7 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="main-section py-20 bg-gray-900">
+        <section id="about" class="main-section py-20 bg-gray-800">
             <div class="container mx-auto px-6">
                 <div class="text-center">
                     <h2 class="text-4xl font-bold text-white mb-4">About LearnAIwithUS</h2>
@@ -188,11 +232,11 @@
                     <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
                         <!-- Instructor 1 -->
                         <div class="text-center">
-                            <img src="https://placehold.co/200x200/111827/facc15?text=Instructor+1" alt="Instructor 1" class="w-40 h-40 rounded-full mx-auto mb-4 border-4 border-yellow-400">
-                            <h4 class="text-2xl font-bold text-white">Your Name</h4>
+                            <img src="https://placehold.co/200x200/111827/facc15?text=Sanjay" alt="Instructor Sanjay Khan" class="w-40 h-40 rounded-full mx-auto mb-4 border-4 border-yellow-400">
+                            <h4 class="text-2xl font-bold text-white">Sanjay Khan</h4>
                             <p class="text-yellow-400 font-semibold">Lead AI Instructor</p>
-                            <p class="text-gray-400 mt-2">Replace this with a short bio. Talk about your passion for AI, your experience, and what you love about teaching.</p>
-                            <a href="#" class="inline-block mt-3 text-gray-400 hover:text-yellow-300">
+                            <p class="text-gray-400 mt-2">Sanjay is an AI and automation expert dedicated to empowering the next wave of builders and innovators. He believes that with the right tools, anyone can learn to harness the power of artificial intelligence.</p>
+                            <a href="https://www.linkedin.com/in/sanjay-khan-a90363104" target="_blank" rel="noopener noreferrer" class="inline-block mt-3 text-gray-400 hover:text-yellow-300">
                                 <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
                             </a>
                         </div>
@@ -212,29 +256,29 @@
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="main-section py-20 bg-gray-800">
+        <section id="faq" class="main-section py-20 bg-gray-900">
             <div class="container mx-auto px-6 max-w-3xl">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-white">Frequently Asked Questions</h2>
                 </div>
                 <div class="space-y-4">
                     <!-- FAQ Item 1 -->
-                    <details class="bg-gray-900/50 p-6 rounded-lg">
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
                         <summary class="font-bold text-xl text-white">What happens after I register and pay?</summary>
                         <p class="text-gray-400 mt-4">Once you register via the Google Form and complete the payment, you will receive a confirmation email within 24 hours. This email will contain the Zoom link for the course, a detailed schedule, and links to any required materials. Please check your spam folder if you don't see it.</p>
                     </details>
                     <!-- FAQ Item 2 -->
-                    <details class="bg-gray-900/50 p-6 rounded-lg">
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
                         <summary class="font-bold text-xl text-white">Do I need any special software?</summary>
                         <p class="text-gray-400 mt-4">No special paid software is required! All you need is a computer with a stable internet connection, a modern web browser (like Chrome or Firefox), and a Zoom account. We will be using free tiers of services like ChatGPT, Zapier, and n8n, and will guide you through the setup process.</p>
                     </details>
                     <!-- FAQ Item 3 -->
-                    <details class="bg-gray-900/50 p-6 rounded-lg">
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
                         <summary class="font-bold text-xl text-white">Will the sessions be recorded?</summary>
                         <p class="text-gray-400 mt-4">Yes, all sessions will be recorded. If you miss a live session or want to review the material, you will have access to the recordings for 30 days after the course concludes.</p>
                     </details>
                     <!-- FAQ Item 4 -->
-                    <details class="bg-gray-900/50 p-6 rounded-lg">
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
                         <summary class="font-bold text-xl text-white">Is there a certificate upon completion?</summary>
                         <p class="text-gray-400 mt-4">Yes, upon successful completion of the course, you will receive a digital certificate of completion from LearnAIwithUS, which you can share on your LinkedIn profile and resume.</p>
                     </details>
