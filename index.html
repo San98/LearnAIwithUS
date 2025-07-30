@@ -28,6 +28,24 @@
             transform: translateY(-10px);
             box-shadow: 0 20px 25px -5px rgba(250, 204, 21, 0.1);
         }
+        /* Simple styling for the FAQ accordion */
+        details > summary {
+            cursor: pointer;
+            list-style: none; /* Remove default marker */
+        }
+        details > summary::-webkit-details-marker {
+            display: none; /* Remove default marker for Chrome */
+        }
+        details > summary::after {
+            content: '+';
+            float: right;
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: transform 0.2s ease-in-out;
+        }
+        details[open] > summary::after {
+            transform: rotate(45deg);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -36,23 +54,27 @@
     <header id="main-header" class="bg-gray-900/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" onclick="showMainPage()" class="text-2xl font-bold text-white">LearnAIwithUS</a>
-            <nav class="hidden md:flex space-x-8">
+            <nav class="hidden lg:flex space-x-8">
                 <a href="#home" class="text-gray-300 hover:text-yellow-300 transition">Home</a>
                 <a href="#courses" class="text-gray-300 hover:text-yellow-300 transition">Courses</a>
+                <a href="#testimonials" class="text-gray-300 hover:text-yellow-300 transition">Testimonials</a>
                 <a href="#about" class="text-gray-300 hover:text-yellow-300 transition">About</a>
+                <a href="#faq" class="text-gray-300 hover:text-yellow-300 transition">FAQ</a>
             </nav>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-8aFE8lN3dKSwBRJeTFz7CYbQepxIPYcHEXn-BjLC42v8gg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-yellow-400 text-gray-900 px-5 py-2 rounded-lg font-bold hover:bg-yellow-300 transition">Register</a>
-            <button id="mobile-menu-button" class="md:hidden text-gray-300">
+            <button id="mobile-menu-button" class="lg:hidden text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90">
+        <div id="mobile-menu" class="hidden lg:hidden bg-gray-900/90">
             <a href="#home" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Home</a>
             <a href="#courses" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Courses</a>
+            <a href="#testimonials" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Testimonials</a>
             <a href="#about" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">About</a>
+            <a href="#faq" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">FAQ</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-8aFE8lN3dKSwBRJeTFz7CYbQepxIPYcHEXn-BjLC42v8gg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="block text-center py-4 px-6 bg-yellow-400 text-gray-900 font-bold">Register</a>
         </div>
     </header>
@@ -75,70 +97,147 @@
                     <h2 class="text-4xl font-bold text-white">Our Learning Path</h2>
                     <p class="mt-2 text-lg text-gray-400">Choose the level that's right for you.</p>
                 </div>
-                
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    
                     <!-- Basic Course Card -->
                     <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
-                        <div class="mb-4">
-                            <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Basic</span>
-                        </div>
+                        <div class="mb-4"><span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Basic</span></div>
                         <h3 class="text-2xl font-bold text-white mb-4">GenAI Foundations</h3>
                         <p class="text-gray-400 mb-6 flex-grow">Perfect for beginners. Understand the core concepts of Generative AI and learn about the powerful tools that are shaping our world.</p>
-                        <ul class="text-gray-300 space-y-3 mb-8">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Introduction to GenAI</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Overview of AI Tools (ChatGPT)</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Intro to Automation (Zapier, n8n)</li>
-                        </ul>
                         <button onclick="showPage('basic')" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</button>
                     </div>
-
                     <!-- Intermediate Course Card -->
                     <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
-                        <div class="mb-4">
-                            <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Intermediate</span>
-                        </div>
+                        <div class="mb-4"><span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Intermediate</span></div>
                         <h3 class="text-2xl font-bold text-white mb-4">AI Automation Deep Dive</h3>
                         <p class="text-gray-400 mb-6 flex-grow">Go beyond the basics. Connect different AI tools and build powerful, automated workflows to streamline tasks and boost productivity.</p>
-                        <ul class="text-gray-300 space-y-3 mb-8">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Advanced Prompt Engineering</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Multi-Step Automation Flows</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Integrating APIs with AI</li>
-                        </ul>
                         <button onclick="showPage('intermediate')" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</button>
                     </div>
-
                     <!-- Advanced Course Card -->
                     <div class="bg-gray-800/50 border border-yellow-400/20 rounded-xl p-8 flex flex-col card-hover-effect">
-                        <div class="mb-4">
-                            <span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Advanced</span>
-                        </div>
+                        <div class="mb-4"><span class="bg-yellow-400/10 text-yellow-300 text-sm font-semibold px-3 py-1 rounded-full">Advanced</span></div>
                         <h3 class="text-2xl font-bold text-white mb-4">Building AI Agents</h3>
                         <p class="text-gray-400 mb-6 flex-grow">The final frontier. Learn to design, build, and deploy autonomous AI agents that can perform complex tasks and make decisions.</p>
-                        <ul class="text-gray-300 space-y-3 mb-8">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>AI Agent Architecture</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Live Agent Building Project</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Testing and Deployment</li>
-                        </ul>
                         <button onclick="showPage('advanced')" class="mt-auto w-full text-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">Learn More</button>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="main-section py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white">What Our Students Say</h2>
+                    <p class="mt-2 text-lg text-gray-400">Real feedback from our community.</p>
+                </div>
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial Card 1 -->
+                    <div class="glass-card rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <!-- Star icons -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-gray-300 italic mb-4">"The Foundations course was the perfect entry into AI. The instructors made complex topics feel simple and exciting. Highly recommended!"</p>
+                        <p class="font-bold text-white">- Ahmed Al-Fahad</p>
+                    </div>
+                     <!-- Testimonial Card 2 -->
+                    <div class="glass-card rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <!-- Star icons -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-gray-300 italic mb-4">"I came in with some basic knowledge, but the Intermediate course really connected the dots for me. Building actual automation workflows was a game-changer."</p>
+                        <p class="font-bold text-white">- Fatima Khan</p>
+                    </div>
+                     <!-- Testimonial Card 3 -->
+                    <div class="glass-card rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <!-- Star icons -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-gray-300 italic mb-4">"The Advanced course on AI Agents was mind-blowing. I'm now building tools for my own business that I never thought possible."</p>
+                        <p class="font-bold text-white">- Yousef Al-Mutairi</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="main-section py-20 bg-gray-800">
+        <section id="about" class="main-section py-20 bg-gray-900">
             <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="https://placehold.co/600x400/111827/facc15?text=LearnAIwithUS" alt="Team working on AI" class="rounded-lg shadow-xl w-full">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-white mb-4">About LearnAIwithUS</h2>
+                    <p class="text-gray-400 text-lg max-w-3xl mx-auto">We are a team of AI enthusiasts and professionals based in Riyadh, dedicated to making AI education accessible to everyone. Our mission is to demystify complex technologies and empower individuals and businesses with the skills they need to thrive in the age of artificial intelligence.</p>
+                </div>
+
+                <!-- Instructors Bio Section -->
+                <div class="mt-20">
+                    <h3 class="text-3xl font-bold text-white text-center mb-12">Meet the Instructors</h3>
+                    <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                        <!-- Instructor 1 -->
+                        <div class="text-center">
+                            <img src="https://placehold.co/200x200/111827/facc15?text=Instructor+1" alt="Instructor 1" class="w-40 h-40 rounded-full mx-auto mb-4 border-4 border-yellow-400">
+                            <h4 class="text-2xl font-bold text-white">Your Name</h4>
+                            <p class="text-yellow-400 font-semibold">Lead AI Instructor</p>
+                            <p class="text-gray-400 mt-2">Replace this with a short bio. Talk about your passion for AI, your experience, and what you love about teaching.</p>
+                            <a href="#" class="inline-block mt-3 text-gray-400 hover:text-yellow-300">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                            </a>
+                        </div>
+                        <!-- Instructor 2 -->
+                        <div class="text-center">
+                            <img src="https://placehold.co/200x200/111827/facc15?text=Instructor+2" alt="Instructor 2" class="w-40 h-40 rounded-full mx-auto mb-4 border-4 border-yellow-400">
+                            <h4 class="text-2xl font-bold text-white">Co-Instructor's Name</h4>
+                            <p class="text-yellow-400 font-semibold">Automation Specialist</p>
+                            <p class="text-gray-400 mt-2">Replace this with a short bio for the second instructor. Highlight their specific expertise, for example, in automation tools or AI agent development.</p>
+                             <a href="#" class="inline-block mt-3 text-gray-400 hover:text-yellow-300">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="text-4xl font-bold text-white mb-4">About LearnAIwithUS</h2>
-                        <p class="text-gray-400 text-lg mb-4">We are a team of AI enthusiasts and professionals based in Riyadh, dedicated to making AI education accessible to everyone. Our mission is to demystify complex technologies and empower individuals and businesses with the skills they need to thrive in the age of artificial intelligence.</p>
-                        <p class="text-gray-400 text-lg">Our hands-on, project-based approach ensures that you're not just learning theory—you're building real, practical solutions from day one.</p>
-                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="main-section py-20 bg-gray-800">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <details class="bg-gray-900/50 p-6 rounded-lg">
+                        <summary class="font-bold text-xl text-white">What happens after I register and pay?</summary>
+                        <p class="text-gray-400 mt-4">Once you register via the Google Form and complete the payment, you will receive a confirmation email within 24 hours. This email will contain the Zoom link for the course, a detailed schedule, and links to any required materials. Please check your spam folder if you don't see it.</p>
+                    </details>
+                    <!-- FAQ Item 2 -->
+                    <details class="bg-gray-900/50 p-6 rounded-lg">
+                        <summary class="font-bold text-xl text-white">Do I need any special software?</summary>
+                        <p class="text-gray-400 mt-4">No special paid software is required! All you need is a computer with a stable internet connection, a modern web browser (like Chrome or Firefox), and a Zoom account. We will be using free tiers of services like ChatGPT, Zapier, and n8n, and will guide you through the setup process.</p>
+                    </details>
+                    <!-- FAQ Item 3 -->
+                    <details class="bg-gray-900/50 p-6 rounded-lg">
+                        <summary class="font-bold text-xl text-white">Will the sessions be recorded?</summary>
+                        <p class="text-gray-400 mt-4">Yes, all sessions will be recorded. If you miss a live session or want to review the material, you will have access to the recordings for 30 days after the course concludes.</p>
+                    </details>
+                    <!-- FAQ Item 4 -->
+                    <details class="bg-gray-900/50 p-6 rounded-lg">
+                        <summary class="font-bold text-xl text-white">Is there a certificate upon completion?</summary>
+                        <p class="text-gray-400 mt-4">Yes, upon successful completion of the course, you will receive a digital certificate of completion from LearnAIwithUS, which you can share on your LinkedIn profile and resume.</p>
+                    </details>
                 </div>
             </div>
         </section>
@@ -262,12 +361,6 @@
             // Show main content
             mainContent.classList.remove('hidden');
             mainHeader.classList.remove('hidden');
-
-            // Optional: scroll to the courses section smoothly
-            const coursesSection = document.getElementById('courses');
-            if(coursesSection) {
-                 coursesSection.scrollIntoView({ behavior: 'smooth' });
-            }
         }
 
 
@@ -279,12 +372,24 @@
         });
 
         // Close mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-        for (let link of mobileMenuLinks) {
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
-        }
+        });
+
+        // Close mobile menu when a main nav link is clicked (for anchor links)
+        const mainNavLinks = document.querySelectorAll('#main-header nav a');
+        mainNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // If it's an anchor link, it will trigger a scroll.
+                // We just need to ensure the main page is visible if coming from a course page.
+                if(mainContent.classList.contains('hidden')){
+                    showMainPage();
+                }
+            });
+        });
     </script>
 
 </body>
