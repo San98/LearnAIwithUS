@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LearnAIwithUS - Your AI Learning Journey</title>
+    <title>FlowForgeAI - Build & learn AI with us</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,23 +47,17 @@
             transform: rotate(45deg);
         }
     </style>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NT7MVJ9Z');</script>
-<!-- End Google Tag Manager -->
 </head>
 <body class="bg-gray-900 text-gray-200">
 
     <!-- Header & Navigation -->
     <header id="main-header" class="bg-gray-900/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" onclick="showMainPage()" class="text-2xl font-bold text-white">LearnAIwithUS</a>
+            <a href="#" onclick="showMainPage()" class="text-2xl font-bold text-white">FlowForgeAI</a>
             <nav class="hidden lg:flex space-x-8">
                 <a href="#home" class="text-gray-300 hover:text-yellow-300 transition">Home</a>
                 <a href="#courses" class="text-gray-300 hover:text-yellow-300 transition">Courses</a>
+                <a href="#cv-analyzer" class="text-gray-300 hover:text-yellow-300 transition">CV Analyzer</a>
                 <a href="#solutions" class="text-gray-300 hover:text-yellow-300 transition">Custom Solutions</a>
                 <a href="#workflows" class="text-gray-300 hover:text-yellow-300 transition">Workflows</a>
                 <a href="#testimonials" class="text-gray-300 hover:text-yellow-300 transition">Testimonials</a>
@@ -81,6 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div id="mobile-menu" class="hidden lg:hidden bg-gray-900/90">
             <a href="#home" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Home</a>
             <a href="#courses" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Courses</a>
+            <a href="#cv-analyzer" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">CV Analyzer</a>
             <a href="#solutions" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Custom Solutions</a>
             <a href="#workflows" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Workflows</a>
             <a href="#testimonials" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Testimonials</a>
@@ -94,9 +89,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <!-- Hero Section -->
         <section id="home" class="main-section gradient-bg text-white pt-32 pb-24">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-black uppercase tracking-wider">Learn AI and</h1>
-                <h2 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-white mt-2">Automate Your Way</h2>
-                <p class="mt-6 text-lg md:text-xl text-indigo-200 max-w-3xl mx-auto">From beginner courses to custom-built AI agents for your business, we provide the tools and expertise to transform your workflow.</p>
+                <h1 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-white mt-2">FlowForgeAI</h1>
+                <p class="mt-6 text-lg md:text-xl text-indigo-200 max-w-3xl mx-auto">Build & learn AI with us. From beginner courses to custom-built AI agents, we provide the tools and expertise to transform your workflow.</p>
                 <a href="#courses" class="mt-10 inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition shadow-lg">Explore Our Services</a>
             </div>
         </section>
@@ -134,8 +128,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </section>
 
+        <!-- CV Analyzer Section -->
+        <section id="cv-analyzer" class="main-section py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white">Free AI-Powered CV Analyzer</h2>
+                    <p class="mt-2 text-lg text-gray-400">See our automation in action. Get a free analysis of your CV.</p>
+                </div>
+                <div class="max-w-xl mx-auto bg-gray-900/50 p-8 rounded-xl border border-yellow-400/20">
+                    <form id="cv-form">
+                        <div class="space-y-6">
+                            <input type="text" id="name" name="Name" placeholder="Your Name" required class="w-full bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                            <input type="email" id="email" name="Email" placeholder="Your Email" required class="w-full bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                            <div>
+                                <label for="cv-upload" class="block text-left text-gray-400 mb-2">Upload your CV:</label>
+                                <input type="file" id="cv-upload" name="CV" accept=".pdf" required class="w-full text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-yellow-400/10 file:text-yellow-300 hover:file:bg-yellow-400/20">
+                                <p class="text-xs text-left mt-2 text-gray-500">Please upload PDF files only.</p>
+                            </div>
+                            <button type="submit" id="submit-cv-button" class="w-full bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition shadow-lg">Analyze My CV</button>
+                        </div>
+                    </form>
+                    <div id="cv-response-message" class="mt-6 text-lg hidden"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- Custom Solutions Section -->
-        <section id="solutions" class="main-section py-20 bg-gray-800">
+        <section id="solutions" class="main-section py-20 bg-gray-900">
             <div class="container mx-auto px-6 text-center">
                  <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-white">Custom AI & Automation Solutions</h2>
@@ -144,10 +163,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="max-w-3xl mx-auto">
                     <p class="text-lg text-gray-300 mb-8">Beyond our courses, we offer bespoke development services. We partner with you to understand your business processes (BPM) in detail and build custom AI agents and automation workflows tailored to your exact needs. If you have a repetitive task or a complex challenge, we can design an AI-powered solution to solve it.</p>
                     <div class="grid md:grid-cols-2 gap-6 text-left mb-10">
-                        <div class="bg-gray-900/50 p-4 rounded-lg flex items-center"><svg class="w-6 h-6 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg> Detailed BPM Analysis</div>
-                        <div class="bg-gray-900/50 p-4 rounded-lg flex items-center"><svg class="w-6 h-6 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg> Custom AI Agent Development</div>
-                        <div class="bg-gray-900/50 p-4 rounded-lg flex items-center"><svg class="w-6 h-6 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg> End-to-End Workflow Automation</div>
-                        <div class="bg-gray-900/50 p-4 rounded-lg flex items-center"><svg class="w-6 h-6 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H17z"></path></svg> Integration With Your Existing Tools</div>
+                        <div class="bg-gray-800/50 p-4 rounded-lg flex items-center"><svg class="w-6 h-6 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg> Detailed BPM Analysis</div>
+                        <div class="bg-gray-800/50 p-4 rounded-lg flex items-center"><svg class="w-6 h-6 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg> Custom AI Agent Development</div>
+                        <div class="bg-gray-800/50 p-4 rounded-lg flex items-center"><svg class="w-6 h-6 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg> End-to-End Workflow Automation</div>
+                        <div class="bg-gray-800/50 p-4 rounded-lg flex items-center"><svg class="w-6 h-6 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H17z"></path></svg> Integration With Your Existing Tools</div>
                     </div>
                     <a href="mailto:sanjay.khan@example.com?subject=Custom AI Solution Inquiry" class="mt-10 inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition shadow-lg">Book a Free Consultation</a>
                 </div>
@@ -155,7 +174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- N8N Sample Workflows Section -->
-        <section id="workflows" class="main-section py-20 bg-gray-900">
+        <section id="workflows" class="main-section py-20 bg-gray-800">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-white">See What You Can Build</h2>
@@ -197,7 +216,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="main-section py-20 bg-gray-800">
+        <section id="testimonials" class="main-section py-20 bg-gray-900">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-white">What Our Students Say</h2>
@@ -251,7 +270,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section id="about" class="main-section py-20 bg-gray-800">
             <div class="container mx-auto px-6">
                 <div class="text-center">
-                    <h2 class="text-4xl font-bold text-white mb-4">About LearnAIwithUS</h2>
+                    <h2 class="text-4xl font-bold text-white mb-4">About FlowForgeAI</h2>
                     <p class="text-gray-400 text-lg max-w-3xl mx-auto">We are a team of AI enthusiasts and professionals based in Riyadh, dedicated to making AI education accessible to everyone. Our mission is to demystify complex technologies and empower individuals and businesses with the skills they need to thrive in the age of artificial intelligence.</p>
                 </div>
 
@@ -309,7 +328,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <!-- FAQ Item 4 -->
                     <details class="bg-gray-800/50 p-6 rounded-lg">
                         <summary class="font-bold text-xl text-white">Is there a certificate upon completion?</summary>
-                        <p class="text-gray-400 mt-4">Yes, upon successful completion of the course, you will receive a digital certificate of completion from LearnAIwithUS, which you can share on your LinkedIn profile and resume.</p>
+                        <p class="text-gray-400 mt-4">Yes, upon successful completion of the course, you will receive a digital certificate of completion from FlowForgeAI, which you can share on your LinkedIn profile and resume.</p>
                     </details>
                 </div>
             </div>
@@ -397,12 +416,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Footer -->
     <footer class="main-section gradient-bg py-10">
         <div class="container mx-auto px-6 text-center text-indigo-200">
-            <p class="text-white font-semibold">&copy; 2024 LearnAIwithUS. All Rights Reserved.</p>
+            <p class="text-white font-semibold">&copy; 2024 FlowForgeAI. All Rights Reserved.</p>
             <p class="text-sm mt-2">Your journey into AI starts here.</p>
         </div>
     </footer>
 
     <script>
+        // --- CV Analyzer Form Logic ---
+        const cvForm = document.getElementById('cv-form');
+        const cvResponseMessage = document.getElementById('cv-response-message');
+        const submitCvButton = document.getElementById('submit-cv-button');
+
+        cvForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            submitCvButton.disabled = true;
+            submitCvButton.textContent = 'Analyzing...';
+            cvResponseMessage.classList.add('hidden');
+
+            const formData = new FormData();
+            formData.append('Name', document.getElementById('name').value);
+            formData.append('Email', document.getElementById('email').value);
+            formData.append('CV', document.getElementById('cv-upload').files[0]);
+
+            // IMPORTANT: Replace this with your actual n8n webhook URL
+            // This should be a standard Webhook node, NOT a "Form Submission" node
+            const webhookUrl = 'https://sanjay98sa.app.n8n.cloud/webhook-test/3656da39-8cb8-4adf-9ffa-5d5f520c7f64';
+
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    cvResponseMessage.textContent = 'Our team will send an email with CV analysis.';
+                    cvResponseMessage.classList.remove('hidden', 'text-red-400');
+                    cvResponseMessage.classList.add('text-green-400');
+                    cvForm.reset();
+                } else {
+                    throw new Error('Submission failed. Please try again.');
+                }
+            } catch (error) {
+                cvResponseMessage.textContent = error.message;
+                cvResponseMessage.classList.remove('hidden', 'text-green-400');
+                cvResponseMessage.classList.add('text-red-400');
+            } finally {
+                 // Restore button state
+                submitCvButton.disabled = false;
+                submitCvButton.textContent = 'Analyze My CV';
+            }
+        });
+
+
         // --- Page Navigation Logic ---
         const mainContent = document.getElementById('main-content');
         const courseDetailsContainer = document.getElementById('course-details-container');
@@ -464,9 +531,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             });
         });
     </script>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT7MVJ9Z"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 </body>
 </html>
